@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import styled from "styled-components"
+import "../style/Api.css"
+const Ul = styled.ul`
+   
+    font-size: 30px;
+`
 function Api() {
     const[product,setProduct] = useState([])
     const[loading,setLoading] = useState(true)
@@ -15,6 +20,7 @@ function Api() {
     }
     useEffect(()=> {
         getProduct()
+        console.log(product)
     },[])
   return(
     <div>
@@ -22,15 +28,15 @@ function Api() {
             <p>loading...</p>
         ): (
             product.map((item)=>(
-                <ul key={item.id}>
+                <Ul key={item.id}>
                 <li key={item.id}>
                     <Link to={`${item.id}`}>
                         <img src={item.image} width={50} height={50} />
                     </Link>
-                    {item.title} {item.price}$
+                    <h4 className="test">{item.title} {item.price}$</h4>
                     
                 </li>
-            </ul>
+            </Ul>
             ))
         )}
     </div>
