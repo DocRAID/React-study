@@ -28,7 +28,8 @@ const Detail = () => {
             return
         }
 
-        getLyrics()
+        const l = getLyrics()
+        getKorean(l)
 
         
         console.log('저작자 :',searchInput.maker)
@@ -42,13 +43,15 @@ const Detail = () => {
             const resJson = await res.json()
             setLyrics(resJson.lyrics)
             setLoading(false)
+        
+            return resJson.lyrics
             
     }
     useEffect(()=> {
         
     })
-    const getKorean =async()=>{
-        const query = lyrics
+    const getKorean =async(l)=>{
+        const query = l
         const kor = await fetch(`http://trans-api-for-ldj.kro.kr/naver/papago?aa=${query}`,{
             method: "GET",
             //   body:JSON.stringify({ query:'hi im good'})
@@ -65,7 +68,6 @@ const Detail = () => {
     function ContentSwitch(){
         if(!engToKor){return lyrics}
         else{
-            getKorean()
             return krLyrics
         }
     }
