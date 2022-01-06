@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Route,Routes } from "react-router-dom";
-import Detail from "./view/Detail";
+import MusicInfo from "./view/MusicInfo"
 import Api from "./view/Api";
 import Home from "./view/Home";
 import Todo from "./view/todo";
@@ -12,7 +12,7 @@ function App() {
         
         <Routes>
             <Route path="/" element={<Home/>} />
-            <Route path="/detail" element={<Detail/>} />
+            <Route path="/musicinfro" element={<MusicInfo/>} />
             <Route path="/api" element={<Api/>} />
             <Route path="/todo" element={<Todo/>} />
             <Route path="/api/:productId" element={<Product/>}/>

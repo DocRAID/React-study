@@ -9,9 +9,9 @@ function Home() {
         <ol>
             <li><Link to="/">Home</Link></li>
             <li><Link to="api">api</Link></li>
-            <li><Link to="detail">detail</Link></li>
             <li><Link to="todo">todo</Link></li>
             <li><Link to="museum">뮤-지엄</Link></li>
+            <li><Link to="musicinfro">뮤직</Link></li>
         </ol>
         
     </div>
